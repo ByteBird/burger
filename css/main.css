@@ -1,13 +1,375 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+2:400,500,600,700,800|Bungee+Shade|Comfortaa:300,400,500,600,700&display=swap');
 
+*, *:before, *:after{
+    box-sizing: border-box;
+}
 body{
     padding: 0;
     margin: 0;
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: 400;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 200;
+    letter-spacing: -0.3px;
+    font-size: 0.9em;
 }
 
+input{
+    display: none;
+}
+
+img{
+    display: block;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+h1,h2,section,article,nav,ul,li,p,span,a,header, div, input, i, label{
+    margin: 0;
+    padding: 0;
+}
+
+/*  HEADER */
+.title{
+    padding-right: 3em;
+    font-family: 'Baloo 2', cursive;
+    font-weight: 600;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    background: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.nav-bar{
+    flex: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 0 0 0.3px #000;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+
+
+
+.list-items{
+    margin-right: 2.8em;
+    
+
+}
+.log-in{
+    display: flex;
+    align-items: center;
+}
+.log-in *{
+    margin-left: 2em;
+}
+
+.log-in span{
+    background: #000;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #ddd;
+}
+
+.log-in a:last-child{
+    font-size: 0.9em;
+    width: 100px;
+    height: 35px;
+    border-radius: 25px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slogan */
+
+.slogan{
+    width: 90%;
+    padding: 6em 4em;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    background-image: url(../img/burger.svg);
+    background-color: rgb(251, 224, 220);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 60% 80%;
+}
+
+.slogan *{
+    margin-bottom: 20px;
+}
+
+.slogan h2{
+    font-weight: 700;
+    text-shadow: 0 0 1px #000;
+    width: 5em;
+    font-size: 3em;
+}
+
+.slogan p{
+    font-weight: 400;
+    line-height: 1.4;
+    width: 15em;
+    margin-bottom: 40px;
+}
+
+.slogan a{
+    font-weight: 700;
+    text-shadow: 0 0 0.5px #000;
+}
+
+.slogan a:hover{
+    color: #555;
+    text-shadow: 0 0 0.5px #555;
+}
+
+.slogan a i{
+    margin-left: 20px;
+    font-size: 1.2em;
+    animation: 1s arrow linear infinite;
+}
+
+@keyframes arrow{
+    100%{
+        margin: 40px;
+    }
+}
+
+/* Contenedor principal */
+
+.main-conteiner{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Recipes */
+
+.main{
+    display: flex;
+}
+.recipes{
+    flex: 1;
+    margin-right: 3em;
+    text-shadow: 0 0 0.5px #000;
+    font-size: 0.9em;
+    letter-spacing: normal;
+}
+
+.recipes h2{
+    text-shadow: 0 0 1px #000;
+    margin-bottom: 2em;
+}
+
+.recipes *{
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+}
+
+.filter-push{
+    font-weight: 700;
+    text-shadow: 0 0 1px #000;
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter-push span{
+    color: rgb(255, 93, 93);
+    text-shadow: 0 0 0.5px rgb(255, 93, 93);
+}
+
+.radio{
+    padding: 0;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#check:checked ~ i,
+#check2:checked ~ i,
+#check3:checked ~ i{
+    background: #ddd;
+    color: #ddd;
+    text-shadow: none;
+}
+
+.radio label i{
+    font-size: 0.6em;
+    font-weight: bold;
+    padding: 3px;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+    transition-duration: 0.2s;
+
+}
+
+.plate-options ul{
+    height: 100px;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    transition-property: height;
+}
+
+.plate-radio{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    font-weight: 700;
+}
+
+.plate-radio label i{
+    font-size: 1.3em;
+}
+
+#check-plus:checked ~ ul{
+    height: 0;
+}
+
+#check-plus2:checked ~ ul{
+    height: 0;
+}
+
+#check-plus3:checked ~ ul{
+    height: 0;
+}
+
+
+/* Plates */
+
+.plates{
+    flex: 3.5;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.plates-search{
+    display: flex;
+}
+
+.plates-search i{
+    background: rgb(240, 240, 240);
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.top input{
+    width: 300px;
+    background: rgb(240, 240, 240);
+    border: none;
+    display: inline-block;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.options{
+    font-size: 0.8em;
+    width: 160px;
+    height: 35px;
+    border-radius: 25px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter{
+    border: none;
+    background: #000;
+    color: #fff;
+}
+
+.filter{
+
+
+}
+
+.main-articles{
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section-articles{
+    cursor: pointer;
+    width: 30%;
+    margin-bottom: 2em;
+    transition-duration: 0.3s;
+}
+
+.images{
+    border: 5px solid #fff;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.section-articles:hover .images img{
+    transform: scale(1.1);
+}
+
+.section-articles *{
+    margin-bottom: 0.8em;
+}
+
+.section-articles img{
+    width: 100%;
+    border-radius: 20px;
+    transition-duration: 0.3s;
+}
+
+.section-articles p{
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+.data{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 0.7em;
+    margin-bottom: 0;
+}
+
+.data>span{
+    color: rgb(121, 121, 121);
+}
+
+.stats i{
+    font-size: 1.3em;
+}
 
